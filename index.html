@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>今天喝哪家？</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #fffdf5; }
+    #result { font-size: 1.8em; margin: 20px; color: #4a4a4a; line-height: 1.6; }
+    button { font-size: 1.5em; padding: 10px 25px; background-color: #ffcc00; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background-color: #ffb300; }
+  </style>
+</head>
+<body>
+  <h1>🥤 今天喝哪家飲料？</h1>
+  <div id="result">點一下，幫你選一間＋告訴你優惠</div>
+  <button onclick="pickStore()">選飲料店</button>
+
+  <script>
+    const drinkStores = [
+      { name: "迷客夏", promo: "滿一杯就送" },
+      { name: "TEATOP", promo: "滿一杯就送" },
+      { name: "可不可", promo: "滿 $50" },
+      { name: "珍煮丹", promo: "滿 $100" },
+      { name: "八耀", promo: "滿 $100" },
+      { name: "Mr.Wish", promo: "滿 $100" },
+      { name: "先喝道", promo: "滿 $100" },
+      { name: "十盛", promo: "滿 $180" },
+      { name: "烏弄", promo: "滿 $200" },
+      { name: "得正", promo: "滿 $200" },
+      { name: "茶湯會", promo: "滿 $200" },
+      { name: "鶴茶樓", promo: "滿 $200" },
+      { name: "龜記勤美", promo: "滿 $200" },
+      { name: "序序茶", promo: "滿 $200" },
+      { name: "大茗", promo: "滿 $250" },
+      { name: "青山", promo: "滿 $300" },
+      { name: "五桐號", promo: "滿 $300" },
+      { name: "金茶伍", promo: "滿 $300" },
+      { name: "小澄市", promo: "滿 $300" },
+      { name: "小佐お茶作", promo: "滿 $300" },
+      { name: "沐沐茶旅", promo: "滿 $300" },
+      { name: "O’DAE", promo: "滿 $300" },
+      { name: "响暮", promo: "滿 $300" },
+      { name: "有飲", promo: "滿 $400" },
+      { name: "醇白", promo: "滿 $500" },
+      { name: "路易莎", promo: "滿 $600" },
+      { name: "約翰紅茶", promo: "滿 $600" }
+    ];
+
+    function pickStore() {
+      const randomIndex = Math.floor(Math.random() * drinkStores.length);
+      const selected = drinkStores[randomIndex];
+      document.getElementById("result").innerHTML = `
+        <strong>${selected.name}</strong><br>
+        🎁 優惠條件：${selected.promo}
+      `;
+    }
+  </script>
+</body>
+</html>
